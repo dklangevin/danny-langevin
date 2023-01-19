@@ -1,5 +1,7 @@
+const withFonts = require('next-fonts');
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = withFonts({
   reactStrictMode: true,
   async headers() {
     return [
@@ -115,6 +117,6 @@ const nextConfig = {
       },
     ];
   },
-};
+});
 
 module.exports = nextConfig;
