@@ -38,6 +38,8 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+
+  --celeste: #97efe9;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -205,9 +207,15 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #2b5876;
-  background: -webkit-linear-gradient(55deg, #4e4376, #2b5876, #256e5b);
-  background: linear-gradient(55deg, #4e4376, #2b5876, #256e5b);
+  /* background: #2b5876;
+  filter: url('/public/noise.svg'); */
+  background: linear-gradient(55deg, #4e4376cc, #2b5876cc, #256e5bcc),
+    url(https://grainy-gradients.vercel.app/noise.svg);
+
+  /* background: #2b5876; */
+
+  /* background: -webkit-linear-gradient(55deg, #4e4376, #2b5876, #256e5b);
+  background: linear-gradient(55deg, #4e4376, #2b5876, #256e5b); */
   /* background: linear-gradient(55deg, #6b4400, #2b5876, #256e5b); */
 }
 
