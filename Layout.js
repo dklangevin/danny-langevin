@@ -19,8 +19,10 @@ const Container = styled.div`
 
 const Content = styled.div`
   width: 100%;
-  height: calc(100vh - 80px);
-  position: absolute;
+  height: 100%;
+  /* height: calc(100vh - 80px); */
+  /* position: absolute;
   top: 80px;
-  left: 0;
+  left: 0; */
+  margin-top: 80px;
 `;
