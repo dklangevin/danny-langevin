@@ -23,12 +23,12 @@ const Container = styled.div`
   ${({ mobile, breakpoint }) =>
     mobile
       ? css`
-          @media screen and (width >= ${breakpoint}px) {
+          @media screen and (max-width: ${breakpoint - 1}px) {
             display: none;
           }
         `
       : css`
-          @media screen and (width < ${breakpoint}px) {
+          @media screen and (min-width: ${breakpoint}px) {
             display: none;
           }
         `}
