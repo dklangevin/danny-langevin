@@ -56,11 +56,7 @@ export default function Experience() {
       <Content>
         <Title>Experience</Title>
         {experience.map((item, i) => (
-          <ExperienceBlock
-            experience={item}
-            key={i}
-            // style={i % 2 ? { marginLeft: 'auto' } : {}}
-          />
+          <ExperienceBlock experience={item} key={i} />
         ))}
       </Content>
     </Container>
@@ -82,16 +78,15 @@ const Content = styled.div`
 `;
 
 const Title = styled.span`
-  font: 900 40px 'Monument';
+  font-size: 40px;
+  font-weight: 900;
   line-height: 36px;
   text-transform: uppercase;
   padding: 32px;
-  color: #aaaaaa;
+  /* color: #aaaaaa; */
   font-style: italic;
-  /* @supports ((text-stroke: 1px white) or (-webkit-text-stroke: 1px white)) {
-    color: transparent;
-    -webkit-text-stroke: 1px white;
-    text-stroke: 1px white;
-    text-shadow: none;
-  } */
+  @media screen and (width < 440px) {
+    padding: 24px;
+    font-size: 36px;
+  }
 `;
