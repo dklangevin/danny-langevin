@@ -1,7 +1,24 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 export default function Nav() {
+  const [isTransparent, setIsTransparent] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 100) {
+        setIsTransparent(false);
+      } else {
+        setIsTransparent(true);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const items = [
     {
       label: 'Experience',
@@ -24,8 +41,9 @@ export default function Nav() {
       href: '/contact',
     },
   ];
+
   return (
-    <Container>
+    <Container isTransparent={isTransparent}>
       <Name href='/'>Danny Langevin</Name>
       <List>
         {items.map(({ label, href }, i) => (
@@ -48,6 +66,16 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   font-family: 'Monument';
+  transition: all 0.1s;
+  z-index: 999;
+  ${({ isTransparent }) =>
+    !isTransparent &&
+    css`
+      background: linear-gradient(to right, #2b5876cc, #256e5bcc);
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid white;
+    `}
 `;
 
 const Name = styled(Link)`
