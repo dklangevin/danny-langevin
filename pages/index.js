@@ -1,27 +1,35 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import Nav from 'components/Nav';
+import Experience from '@/components/Experience';
 
 export default function Home() {
   return (
     <Container>
       <Nav />
       <Section>
-        <NameAvatar>
-          <Avatar src='/avatar.webp' width={280} height={280} />
-          <Info>
-            <Name>Danny Langevin</Name>
-          </Info>
-        </NameAvatar>
-        <Title>
-          <Grey>Full Stack</Grey> Software Engineer
-        </Title>
-        {/* <Description>
+        <Welcome>
+          <NameAvatar>
+            <Avatar src='/avatar.webp' width={280} height={280} />
+            <Info>
+              <Name>Danny</Name>
+              <Name>Langevin</Name>
+            </Info>
+          </NameAvatar>
+          <Title>
+            <Celeste>Full Stack</Celeste>
+            Software Engineer
+          </Title>
+          {/* <Description>
           {
             "Hi! I'm a full stack software engineer with 4+ years experience in the software field. I graduated from CU Boulder in 2019 with a B.S. in Electrical & Computer Engineering."
           }
         </Description> */}
-        {/* <Description>Click on the links above to explore!</Description> */}
+          {/* <Description>Click on the links above to explore!</Description> */}
+        </Welcome>
+      </Section>
+      <Section>
+        <Experience />
       </Section>
     </Container>
   );
@@ -31,50 +39,59 @@ const Container = styled.div`
   width: 100%;
   min-height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
 
 const Section = styled.section`
   display: flex;
+  min-height: calc(100vh - 80px);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Welcome = styled.div`
+  display: flex;
   flex-direction: column;
-  gap: 32px;
-  /* max-width: 1000px; */
+  gap: 16px;
+  padding: 32px;
 `;
 
 const NameAvatar = styled.div`
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 16px;
+  flex-wrap: wrap;
+  @media screen and (width < 440px) {
+    flex-direction: column;
+    align-items: unset;
+  }
 `;
 
 const Avatar = styled(Image)`
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid white;
+  width: clamp(200px, 30vw, 280px);
+  height: clamp(200px, 30vw, 280px);
+  @media screen and (width < 440px) {
+    margin-inline: auto;
+  }
 `;
-
-// const Name = styled.span`
-//   font-size: 30px;
-//   font-weight: 900;
-//   text-align: center;
-// `;
 
 const Info = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
 `;
 
-// const Name = styled.img`
-//   width: 300px;
-// `;
-
 const Name = styled.span`
-  font-size: 120px;
+  display: block;
+  font-size: max(12vw, 60px);
+  line-height: max(10vw, 50px);
   font-weight: 700;
   text-transform: uppercase;
-  line-height: 100px;
   font-style: italic;
   @supports ((text-stroke: 2px white) or (-webkit-text-stroke: 2px white)) {
     color: transparent;
@@ -82,15 +99,12 @@ const Name = styled.span`
     text-stroke: 2px white;
     text-shadow: none;
   }
-  max-width: 610px;
 `;
 
 const Title = styled.span`
-  /* width: 100%; */
-  font: 900 40px 'Monument';
-  /* font-size: 60px; */
-  line-height: 36px;
-  /* font-weight: 900; */
+  font-weight: 900;
+  font-size: max(5.5vw, 32px);
+  line-height: max(4.8vw, 28px);
   text-transform: uppercase;
   text-align: justify;
   display: inline-block;
@@ -101,9 +115,10 @@ const Title = styled.span`
   }
 `;
 
-const Grey = styled.span`
-  color: turquoise;
+const Celeste = styled.span`
+  color: var(--celeste);
   display: inline-block;
+  margin-right: 0.4em;
 `;
 
 const Description = styled.p`
