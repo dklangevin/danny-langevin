@@ -16,12 +16,12 @@ export default function ExperienceBlock({
         <Info>
           <TopRow>
             <Position>{position}</Position>
-            <Hidden mobile breakpoint={640}>
+            <Hidden breakpoint={640}>
               <TimeRange>{timeRange}</TimeRange>
             </Hidden>
           </TopRow>
           <Company>{company}</Company>
-          <Hidden breakpoint={640}>
+          <Hidden mobile breakpoint={640}>
             <TimeRange>{timeRange}</TimeRange>
           </Hidden>
           <LearnMore href={`/experience/${slug}`}>Learn More</LearnMore>

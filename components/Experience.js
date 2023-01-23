@@ -67,7 +67,7 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, #00000000 0%, #222222 50%);
-  height: calc(130vh - 80px);
+  min-height: calc(130vh - 80px);
 `;
 
 const Content = styled.div`
