@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import Hidden from 'components/Hidden';
+import { IconMenu } from 'icons';
 
 export default function Nav() {
   const [isTransparent, setIsTransparent] = useState(true);
@@ -44,28 +46,32 @@ export default function Nav() {
 
   return (
     <Container isTransparent={isTransparent}>
-      <Name href='/'>Danny Langevin</Name>
-      <List>
-        {items.map(({ label, href }, i) => (
-          <Item key={i}>
-            <Link href={href}>{label}</Link>
-          </Item>
-        ))}
-      </List>
+      <Hidden breakpoint={780} fullWidth>
+        <Content>
+          <Name href='/'>Danny Langevin</Name>
+          <List>
+            {items.map(({ label, href }, i) => (
+              <Item key={i}>
+                <Link href={href}>{label}</Link>
+              </Item>
+            ))}
+          </List>
+        </Content>
+      </Hidden>
+      <Hidden mobile breakpoint={780} fullWidth>
+        <Content>
+          <MenuIcon />
+        </Content>
+      </Hidden>
     </Container>
   );
 }
 
 const Container = styled.div`
-  height: 80px;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  font-family: 'Monument';
   transition: all 0.1s;
   z-index: 999;
   ${({ isTransparent }) =>
@@ -76,6 +82,14 @@ const Container = styled.div`
       backdrop-filter: blur(16px);
       border-bottom: 1px solid white;
     `}
+`;
+
+const Content = styled.div`
+  height: 80px;
+  display: flex;
+  align-items: center;
+  font-family: 'Monument';
+  padding: 16px;
 `;
 
 const Name = styled(Link)`
@@ -106,4 +120,10 @@ const Item = styled.li`
   :hover {
     background: rgba(0, 0, 0, 0.3);
   }
+`;
+
+const MenuIcon = styled(IconMenu)`
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 `;
