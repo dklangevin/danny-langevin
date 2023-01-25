@@ -24,7 +24,7 @@ export default function Nav() {
   const items = [
     {
       label: 'Experience',
-      href: '/experience',
+      href: '/#experience',
     },
     {
       label: 'Projects',
@@ -32,7 +32,7 @@ export default function Nav() {
     },
     {
       label: 'Skills',
-      href: '/skills',
+      href: '/#skills',
     },
     {
       label: 'Education',
@@ -52,7 +52,7 @@ export default function Nav() {
           <List>
             {items.map(({ label, href }, i) => (
               <Item key={i}>
-                <Link href={href}>{label}</Link>
+                <a href={href}>{label}</a>
               </Item>
             ))}
           </List>
@@ -77,10 +77,10 @@ const Container = styled.div`
   ${({ isTransparent }) =>
     !isTransparent &&
     css`
-      background: linear-gradient(to right, #2b5876cc, #256e5bcc);
+      /* background: linear-gradient(to right, #2b5876cc, #256e5bcc); */
       background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid white;
+      backdrop-filter: blur(32px);
+      outline: 1px solid white;
     `}
 `;
 
