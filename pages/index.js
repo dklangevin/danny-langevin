@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import Nav from 'components/Nav';
 import Experience from '@/components/Experience';
+import Skills from '@/components/Skills';
 
 export default function Home() {
   return (
@@ -28,8 +29,11 @@ export default function Home() {
           {/* <Description>Click on the links above to explore!</Description> */}
         </Welcome>
       </Section>
-      <Section>
+      <Section id='experience'>
         <Experience />
+      </Section>
+      <Section id='skills'>
+        <Skills />
       </Section>
     </Container>
   );
@@ -57,6 +61,8 @@ const Welcome = styled.div`
   flex-direction: column;
   gap: 16px;
   padding: 32px;
+  width: 100%;
+  max-width: 1200px;
 `;
 
 const NameAvatar = styled.div`
