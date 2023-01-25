@@ -1,15 +1,14 @@
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
 import Image from 'next/image';
-import { experience } from 'constants';
+import { experience } from '../../constants';
 import { useRouter } from 'next/router';
 
 export default function ExperienceBlock(props) {
   const router = useRouter();
   const { slug } = router.query;
-  console.log(experience);
   const { position, company, logo, timeRange, description } =
-    experience?.find((item) => item.slug === slug) || {};
+    experience.find((item) => item.slug === slug) || {};
   return (
     <Container {...props}>
       <Content>
