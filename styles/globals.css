@@ -198,6 +198,11 @@
   font-display: swap;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 html,
 body {
   font-family: 'Neue Montreal';
@@ -210,7 +215,7 @@ body {
   /* background: #2b5876;
   filter: url('/public/noise.svg'); */
   background: linear-gradient(55deg, #4e4376cc, #2b5876cc, #256e5bcc),
-    url(https://grainy-gradients.vercel.app/noise.svg);
+    /* url(https://grainy-gradients.vercel.app/noise.svg); */ url(/noise.svg);
 
   /* background: #2b5876; */
 
