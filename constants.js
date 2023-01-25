@@ -46,3 +46,36 @@ export const experience = [
     ],
   },
 ];
+
+export const webSkills = [
+  { name: 'Javascript', icon: 'js.png' },
+  { name: 'React.js', logo: '/logos/react.png' },
+  { name: 'Next.js', logo: '/logos/next.svg' },
+  { name: 'Node.js', logo: '/logos/node.svg' },
+  { name: 'Express.js', logo: '/logos/express.svg' },
+  { name: 'Sequelize.js', logo: '/logos/sequelize.svg' },
+  { name: 'styled-components', logo: '/logos/styled-components.png' },
+  { name: 'OAuth', icon: 'oauth.svg' },
+  { name: 'SWR', logo: '/logos/swr.svg' },
+  { name: 'PostgreSQL', logo: '/logos/postgres.svg' },
+  { name: 'MariaDB', logo: '/logos/mariadb.svg' },
+  { name: 'MySQL', logo: '/logos/mysql.svg' },
+  { name: 'Playwright.js', logo: '/logos/playwright.webp' },
+  { name: 'HTML', logo: '/logos/html.svg' },
+  { name: 'CSS', logo: '/logos/css.svg' },
+];
+
+export const otherSkills = [
+  { name: 'Python', logo: '/logos/css.svg' },
+  { name: 'C/C++', logo: '/logos/css.svg' },
+  { name: 'Unix', logo: '/logos/css.svg' },
+  { name: 'Bash', logo: '/logos/css.svg' },
+  { name: 'MATLAB', logo: '/logos/css.svg' },
+  { name: 'Excel/VBA', logo: '/logos/css.svg' },
+  { name: 'XML', logo: '/logos/css.svg' },
+  { name: 'Mathematica', logo: '/logos/css.svg' },
+  { name: 'Agile', logo: '/logos/css.svg' },
+  { name: 'JIRA', logo: '/logos/css.svg' },
+  { name: 'Ada', logo: '/logos/css.svg' },
+  { name: 'multi-threaded programming', logo: '/logos/css.svg' },
+];
