@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Hidden from 'components/Hidden';
 
-export default function ExperienceBlock({
+export default function ExperienceCard({
   experience: { position, company, logo, slug, timeRange, description } = {},
   ...props
 }) {
