@@ -76,8 +76,17 @@ const SkillsGroup = styled.div`
 `;
 
 const SkillType = styled.span`
-  font-weight: 500;
-  font-size: 40px;
-  text-transform: uppercase;
-  display: inline-block;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  :after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0px;
+    border: 1px solid #eeeeee33;
+    margin-top: 1px;
+  }
 `;

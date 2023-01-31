@@ -104,9 +104,11 @@ const Position = styled.span`
 `;
 
 const Company = styled.span`
-  font-size: 22px;
+  /* font-family: 'Glamsy'; */
+  font-size: 26px;
   font-weight: 800;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+  letter-spacing: 0.1ch;
   color: var(--celeste);
 `;
 
