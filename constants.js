@@ -1,8 +1,15 @@
+import rivalLogo from 'public/rival-badge.png';
+import sasLogo from 'public/sas.png';
+import coloplastLogo from 'public/coloplast.png';
+import playerGridPreview from 'public/previews/player-grid.png';
+import dailyPreview from 'public/previews/daily.png';
+import trackrPreview from 'public/previews/trackr.png';
+
 export const experience = [
   {
     position: 'Full Stack Software Engineer',
     company: 'Rival Games',
-    logo: '/rival-badge.png',
+    logo: rivalLogo,
     backgroundLogoStyle: {
       top: '20%',
       left: '10%',
@@ -26,7 +33,7 @@ export const experience = [
   {
     position: 'Software Engineer II',
     company: 'Special Aerospace Services',
-    logo: '/sas.png',
+    logo: sasLogo,
     backgroundLogoStyle: {
       top: '-50%',
       left: '10%',
@@ -55,7 +62,7 @@ export const experience = [
   {
     position: 'Intern',
     company: 'Coloplast',
-    logo: '/coloplast.png',
+    logo: coloplastLogo,
     logoStyle: {
       maxWidth: 150,
     },
@@ -112,7 +119,7 @@ export const otherSkills = [
 export const projects = [
   {
     name: 'player grid',
-    preview: '/previews/player-grid.png',
+    preview: playerGridPreview,
     slug: 'player-grid',
     link: 'https://player-grid.vercel.app/',
     github: 'https://github.com/dklangevin/player-grid',
@@ -122,7 +129,7 @@ export const projects = [
   },
   {
     name: 'trackr',
-    preview: '/previews/trackr.png',
+    preview: trackrPreview,
     slug: 'trackr',
     link: 'https://player-grid.vercel.app/',
     github: 'https://github.com/dklangevin/player-grid',
@@ -132,7 +139,7 @@ export const projects = [
   },
   {
     name: 'daily',
-    preview: '/previews/daily.png',
+    preview: dailyPreview,
     slug: 'daily',
     link: 'https://player-grid.vercel.app/',
     github: 'https://github.com/dklangevin/player-grid',

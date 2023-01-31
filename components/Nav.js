@@ -55,9 +55,11 @@ export default function Nav() {
           <Name href='/'>Danny Langevin</Name>
           <List>
             {items.map(({ label, href }, i) => (
-              <Item key={i} selected={pathname === href}>
-                <a href={href}>{label}</a>
-              </Item>
+              <li key={i}>
+                <Item href={href} selected={pathname === href}>
+                  {label}
+                </Item>
+              </li>
             ))}
           </List>
         </Content>
@@ -96,11 +98,11 @@ const Content = styled.div`
 `;
 
 const Name = styled(Link)`
-  font-weight: 400;
-  font-size: 22px;
-  /* font-style: italic; */
+  font-weight: 700;
+  font-size: 28px;
+  font-style: italic;
   /* text-transform: uppercase; */
-  /* letter-spacing: 0.4rem; */
+  letter-spacing: 0.2rem;
   margin: 0 auto 0 16px;
   text-transform: uppercase;
   cursor: pointer;
@@ -111,9 +113,10 @@ const Name = styled(Link)`
 
 const List = styled.ul`
   display: flex;
+  gap: 4px;
 `;
 
-const Item = styled.li`
+const Item = styled.a`
   font-size: 20px;
   font-weight: 400;
   /* text-transform: uppercase; */
@@ -123,13 +126,12 @@ const Item = styled.li`
   ${({ selected }) =>
     selected &&
     css`
-      color: var(--celeste);
+      /* color: var(--celeste); */
+      background: rgba(0, 0, 0, 0.3);
       font-weight: 500;
-      /* background: rgba(0, 0, 0, 0.3); */
     `}
   :hover {
-    background: rgba(0, 0, 0, 0.3);
-    /* font-weight: 400; */
+    background: #97efe955;
   }
 `;
 
