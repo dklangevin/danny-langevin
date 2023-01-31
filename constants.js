@@ -5,6 +5,29 @@ import playerGridPreview from 'public/previews/player-grid.png';
 import dailyPreview from 'public/previews/daily.png';
 import trackrPreview from 'public/previews/trackr.png';
 
+export const navItems = [
+  {
+    label: 'Experience',
+    href: '/experience',
+  },
+  {
+    label: 'Projects',
+    href: '/projects',
+  },
+  {
+    label: 'Skills',
+    href: '/skills',
+  },
+  {
+    label: 'Education',
+    href: '/education',
+  },
+  {
+    label: 'Contact',
+    href: '/contact',
+  },
+];
+
 export const experience = [
   {
     position: 'Full Stack Software Engineer',
@@ -118,7 +141,7 @@ export const otherSkills = [
 
 export const projects = [
   {
-    name: 'player grid',
+    name: 'player-grid',
     preview: playerGridPreview,
     slug: 'player-grid',
     link: 'https://player-grid.vercel.app/',
