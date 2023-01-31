@@ -6,9 +6,12 @@ export default function Skills() {
   return (
     <Container>
       <Content>
-        {/* <Title>Skills</Title> */}
         <SkillsGroup>
-          {/* <SkillType>Web</SkillType> */}
+          <SkillType>
+            <Line />
+            Web Skills
+            <Line />
+          </SkillType>
           <WrapSkills>
             {webSkills?.map(({ name, icon, logo }, i) => (
               <SkillCard name={name} icon={icon} logo={logo} key={i} />
@@ -16,7 +19,11 @@ export default function Skills() {
           </WrapSkills>
         </SkillsGroup>
         <SkillsGroup>
-          {/* <SkillType>Other</SkillType> */}
+          <SkillType>
+            <Line />
+            Other Skills
+            <Line />
+          </SkillType>
           <WrapSkills>
             {otherSkills?.map(({ name, icon, logo }, i) => (
               <SkillCard name={name} icon={icon} logo={logo} key={i} />
@@ -82,15 +89,26 @@ const SkillsGroup = styled.div`
 `;
 
 const SkillType = styled.span`
-  font-family: 'Monument';
-  font-weight: 500;
-  font-size: 200px;
-  text-transform: uppercase;
-  display: inline-block;
-  /* transform: rotate(-90deg); */
-  position: absolute;
-  color: rgba(100, 100, 100, 0.3);
-  left: 0;
-  top: 0;
-  z-index: -1;
+  font-family: 'Glamsy';
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  margin-block: 16px;
+  font-size: 24px;
+  /* text-transform: uppercase; */
+  /* :after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0px;
+    border: 1px solid #eeeeee33;
+    margin-top: 1px;
+  } */
+`;
+
+const Line = styled.hr`
+  width: 100%;
+  border: 1px solid #eeeeee33;
 `;

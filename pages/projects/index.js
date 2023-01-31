@@ -3,27 +3,12 @@ import { projects } from '../../constants';
 import Image from 'next/image';
 import { useState } from 'react';
 import Link from 'next/link';
-import Menu from '../../components/Menu';
+import Hidden from '@/components/Hidden';
 
 export default function Projects() {
   const [preview, setPreview] = useState();
   return (
     <Container>
-      <WrapPreview>
-        {preview && <Preview src={preview} fill sizes='900px'></Preview>}
-      </WrapPreview>
-      {/* <Menu items={projects.map(({ name }) => name)} /> */}
-      {/* <List>
-        {projects.map(({ name, preview, slug }, i) => (
-          <li
-            key={i}
-            onMouseEnter={() => setPreview(preview)}
-            onMouseLeave={() => setPreview()}
-          >
-            <Name href={`/projects/${slug}`}>{name}</Name>
-          </li>
-        ))}
-      </List> */}
       <List>
         {projects.map(({ name, slug, preview }) => (
           <Item
@@ -36,6 +21,11 @@ export default function Projects() {
           </Item>
         ))}
       </List>
+      <WrapPreview>
+        <Hidden fullWidth breakpoint={540}>
+          {preview && <Preview src={preview} fill sizes='900px'></Preview>}
+        </Hidden>
+      </WrapPreview>
     </Container>
   );
 }
@@ -45,17 +35,18 @@ const Container = styled.div`
   max-width: 100vw;
   height: calc(100vh - 80px);
   display: flex;
+  position: relative;
 `;
 
 const WrapPreview = styled.div`
   width: 100%;
   max-width: 900px;
+  min-width: 600px;
   /* height: 100%; */
   display: flex;
   align-items: flex-end;
   position: relative;
   margin-bottom: 32px;
-  /* perspective: 2000px; */
 `;
 
 const Preview = styled(Image)`
@@ -68,9 +59,15 @@ const Preview = styled(Image)`
     rgba(0, 0, 0, 0.75) 70%,
     rgba(0, 0, 0, 0) 100%
   );
-  /* transform: rotateY(20deg); */
   margin-left: 64px;
-  /* linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 70%, rgba(0, 0, 0, 0) 100%); */
+  @media screen and (max-width: 1200px) {
+    margin-block: auto;
+  }
+  /* @media screen and (max-width: 780px) {
+    height: 100% !important;
+    object-fit: cover;
+    object-position: left;
+  } */
 `;
 
 // const List = styled.ul`
@@ -125,18 +122,27 @@ const List = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 80px;
+  gap: 12px;
+  margin-left: 5%;
   perspective: 1000px;
+  font-size: max(8vw, 60px);
+  line-height: max(7vw, 50px);
+  font-weight: 900;
+  @media screen and (max-width: 540px) {
+    min-width: 100%;
+    margin-left: 0;
+    padding: 16px;
+    font-size: max(10vw, 80px);
+    line-height: max(9vw, 70px);
+  }
 `;
 
 const Item = styled(Link)`
-  text-align: right;
   font-family: 'Neue Montreal';
-  font-weight: 900;
-  font-size: 80px;
-  line-height: 68px;
-  transform-origin: 100% 0%;
-  transform: rotateY(-20deg);
+  /* font-family: 'Glamsy'; */
+  transform-origin: 0% 0%;
+  transform: rotateY(20deg);
+  white-space: nowrap;
   :not(:hover) {
     @supports ((text-stroke: 1px white) or (-webkit-text-stroke: 1px white)) {
       color: transparent;
@@ -146,7 +152,10 @@ const Item = styled(Link)`
     }
   }
   :hover {
-    transform: rotateY(-5deg);
+    transform: rotateY(5deg);
     color: var(--celeste);
+  }
+  @media screen and (max-width: 540px) {
+    white-space: unset;
   }
 `;

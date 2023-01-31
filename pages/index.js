@@ -10,40 +10,32 @@ export default function Home() {
     <Container>
       <Nav />
       <WrapMenu>{/* <Menu /> */}</WrapMenu>
-      <Section>
-        <Welcome>
-          <NameAvatar>
-            <Avatar src='/avatar.webp' width={280} height={280} />
-            <Info>
-              <Name>Danny</Name>
-              <Name>Langevin</Name>
-            </Info>
-          </NameAvatar>
-          <Title>
-            <Celeste>Full Stack</Celeste>
-            Software Engineer
-          </Title>
-          {/* <Description>
+      <Welcome>
+        <NameAvatar>
+          <Avatar src='/avatar.webp' width={280} height={280} />
+          <Info>
+            <Name>Danny</Name>
+            <Name>Langevin</Name>
+          </Info>
+        </NameAvatar>
+        <Title>
+          <Celeste>Full Stack</Celeste>
+          Software Engineer
+        </Title>
+        {/* <Description>
           {
             "Hi! I'm a full stack software engineer with 4+ years experience in the software field. I graduated from CU Boulder in 2019 with a B.S. in Electrical & Computer Engineering."
           }
         </Description> */}
-          {/* <Description>Click on the links above to explore!</Description> */}
-        </Welcome>
-      </Section>
-      {/* <Section id='experience'>
-        <Experience />
-      </Section>
-      <Section id='skills'>
-        <Skills />
-      </Section> */}
+        {/* <Description>Click on the links above to explore!</Description> */}
+      </Welcome>
     </Container>
   );
 }
 
 const Container = styled.div`
   width: 100%;
-  min-height: 100%;
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,7 +45,8 @@ const Container = styled.div`
 
 const Section = styled.section`
   display: flex;
-  min-height: calc(100vh - 80px);
+  /* min-height: calc(100vh - 80px); */
+  height: 100%;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -75,7 +68,7 @@ const NameAvatar = styled.div`
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
-  @media screen and (width < 440px) {
+  @media screen and (max-width: 440px) {
     flex-direction: column;
     align-items: unset;
   }
@@ -87,7 +80,7 @@ const Avatar = styled(Image)`
   border: 3px solid white;
   width: clamp(200px, 30vw, 280px);
   height: clamp(200px, 30vw, 280px);
-  @media screen and (width < 440px) {
+  @media screen and (max-width: 440px) {
     margin-inline: auto;
   }
 `;
@@ -99,8 +92,8 @@ const Info = styled.div`
 
 const Name = styled.span`
   display: block;
-  font-size: max(12vw, 60px);
-  line-height: max(10vw, 50px);
+  font-size: max(11.6vw, 60px);
+  line-height: max(9.6vw, 50px);
   font-weight: 700;
   text-transform: uppercase;
   font-style: italic;
@@ -113,9 +106,9 @@ const Name = styled.span`
 `;
 
 const Title = styled.span`
-  font-weight: 900;
-  font-size: max(5.5vw, 32px);
-  line-height: max(4.8vw, 28px);
+  font-weight: 800;
+  font-size: max(5.3vw, 32px);
+  line-height: max(4.6vw, 28px);
   text-transform: uppercase;
   text-align: justify;
   display: inline-block;

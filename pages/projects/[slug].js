@@ -108,9 +108,13 @@ const HeaderRow = styled.div`
   align-items: flex-end;
   margin-top: -42px;
   padding-inline: 32px;
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+  }
 `;
 
 const ShortDescription = styled.span`
+  font-family: 'Glamsy';
   font-size: 28px;
   font-weight: 800;
   color: var(--celeste);
