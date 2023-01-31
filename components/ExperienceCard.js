@@ -4,21 +4,40 @@ import Image from 'next/image';
 import Hidden from 'components/Hidden';
 
 export default function ExperienceCard({
-  experience: { position, company, logo, slug, timeRange, description } = {},
+  experience: {
+    position,
+    company,
+    logo,
+    logoStyle,
+    backgroundLogoStyle,
+    slug,
+    timeRange,
+    description,
+  } = {},
   ...props
 }) {
   return (
     <Container {...props}>
+      <WrapBackgroundImage>
+        <BackgroundImage
+          src={logo}
+          alt='background-image'
+          width={500}
+          height={500}
+          style={backgroundLogoStyle}
+        />
+      </WrapBackgroundImage>
       <Header>
-        <WrapImage>
-          <CompanyImage src={logo} alt='company-logo' fill sizes='200px' />
-        </WrapImage>
+        <CompanyImage
+          src={logo}
+          alt='company-logo'
+          width={300}
+          height={300}
+          style={logoStyle}
+        />
         <Info>
           <TopRow>
             <Position>{position}</Position>
-            <Hidden breakpoint={640}>
-              <TimeRange>{timeRange}</TimeRange>
-            </Hidden>
           </TopRow>
           <Company>{company}</Company>
           <Hidden mobile breakpoint={640}>
@@ -27,28 +46,26 @@ export default function ExperienceCard({
           <LearnMore href={`/experience/${slug}`}>Learn More</LearnMore>
         </Info>
       </Header>
-      {/* <Description>
-        {description?.map((item, i) => (
-          <Item key={i}>{item}</Item>
-        ))}
-      </Description> */}
     </Container>
   );
 }
 
 const Container = styled.div`
+  width: 100%;
   padding: 32px;
   display: flex;
   flex-direction: column;
   gap: 32px;
   border-radius: 16px;
   background: rgba(0, 0, 0, 0.2);
+  position: relative;
+  /* max-height: 200px; */
 `;
 
 const Header = styled.div`
   display: flex;
   gap: 32px;
-  @media screen and (width < 440px) {
+  @media screen and (max-width: 500px) {
     flex-direction: column;
   }
 `;
@@ -68,10 +85,22 @@ const TopRow = styled.div`
 `;
 
 const Position = styled.span`
-  font-size: 32px;
+  font-size: 54px;
   font-weight: 800;
-  line-height: 36px;
+  line-height: 50px;
   text-transform: uppercase;
+  @media screen and (min-width: 781px) {
+    @supports ((text-stroke: 1px white) or (-webkit-text-stroke: 1px white)) {
+      color: transparent;
+      -webkit-text-stroke: 1px white;
+      text-stroke: 1px white;
+      text-shadow: none;
+    }
+  }
+  @media screen and (max-width: 780px) {
+    font-size: 40px;
+    line-height: 36px;
+  }
 `;
 
 const Company = styled.span`
@@ -86,13 +115,41 @@ const TimeRange = styled.span`
 `;
 
 const WrapImage = styled.div`
-  min-width: 100px;
-  min-height: 100px;
+  /* min-width: 100px; */
+  /* min-height: 100px; */
+  /* width: fit-content; */
   position: relative;
 `;
 
 const CompanyImage = styled(Image)`
   object-fit: contain;
+  filter: grayscale(100%);
+  height: 100% !important;
+  width: 100%;
+  max-width: 200px;
+  margin-block: auto;
+  @media screen and (width < 780px) {
+    max-width: 140px !important;
+  }
+`;
+
+const WrapBackgroundImage = styled.div`
+  width: 50%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  opacity: 2%;
+  overflow: hidden;
+`;
+
+const BackgroundImage = styled(Image)`
+  object-fit: contain;
+  filter: grayscale(100%);
+  aspect-ratio: 1;
+  position: absolute;
+  left: 20%;
+  top: 10%;
 `;
 
 const LearnMore = styled(Link)`
