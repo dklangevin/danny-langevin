@@ -1,11 +1,16 @@
 import styled from 'styled-components';
+import MobileNav from './components/MobileNav';
 import Nav from './components/Nav';
+import { useState } from 'react';
+import css from 'styled-jsx/css';
 
 export default function Layout({ Component, pageProps }) {
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   return (
-    <Container>
+    <Container mobileNavOpen={mobileNavOpen}>
       <Noise />
-      <Nav />
+      <Nav onOpenMobileNav={() => setMobileNavOpen(true)} />
+      {mobileNavOpen && <MobileNav onClose={() => setMobileNavOpen(false)} />}
       <Content>
         <Component {...pageProps} />
       </Content>
@@ -16,6 +21,13 @@ export default function Layout({ Component, pageProps }) {
 const Container = styled.div`
   min-height: 100vh;
   display: flex;
+  ${({ mobileNavOpen }) =>
+    mobileNavOpen &&
+    css`
+      height: 100vh;
+      overflow-y: hidden;
+      padding-right: 15px;
+    `}
 `;
 
 const Content = styled.div`
