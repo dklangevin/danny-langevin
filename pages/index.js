@@ -3,11 +3,13 @@ import Image from 'next/image';
 import Nav from 'components/Nav';
 import Experience from '@/components/Experience';
 import Skills from '@/components/Skills';
+// import Menu from './menu';
 
 export default function Home() {
   return (
     <Container>
       <Nav />
+      <WrapMenu>{/* <Menu /> */}</WrapMenu>
       <Section>
         <Welcome>
           <NameAvatar>
@@ -29,12 +31,12 @@ export default function Home() {
           {/* <Description>Click on the links above to explore!</Description> */}
         </Welcome>
       </Section>
-      <Section id='experience'>
+      {/* <Section id='experience'>
         <Experience />
       </Section>
       <Section id='skills'>
         <Skills />
-      </Section>
+      </Section> */}
     </Container>
   );
 }
@@ -46,6 +48,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 `;
 
 const Section = styled.section`
@@ -54,6 +57,7 @@ const Section = styled.section`
   width: 100%;
   justify-content: center;
   align-items: center;
+  margin-top: 32px;
 `;
 
 const Welcome = styled.div`
@@ -63,6 +67,7 @@ const Welcome = styled.div`
   padding: 32px;
   width: 100%;
   max-width: 1200px;
+  perspective: 1000px;
 `;
 
 const NameAvatar = styled.div`
@@ -130,4 +135,11 @@ const Celeste = styled.span`
 const Description = styled.p`
   font-size: 22px;
   text-transform: uppercase;
+`;
+
+const WrapMenu = styled.div`
+  position: absolute;
+  top: -30px;
+  right: 32px;
+  z-index: 1;
 `;
