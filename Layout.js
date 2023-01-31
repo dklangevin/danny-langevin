@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 export default function Layout({ Component, pageProps }) {
   return (
     <Container>
+      <Noise />
       <Nav />
       <Content>
         <Component {...pageProps} />
@@ -25,4 +26,22 @@ const Content = styled.div`
   top: 80px;
   left: 0; */
   margin-top: 80px;
+  z-index: 1;
+`;
+
+const Noise = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  :after {
+    content: '';
+    height: 300%;
+    width: 300%;
+    opacity: 0.1;
+    position: fixed;
+    background-image: url(/noise.png);
+    animation: grain 1s steps(10) infinite;
+  }
 `;
