@@ -3,11 +3,21 @@ export const experience = [
     position: 'Full Stack Software Engineer',
     company: 'Rival Games',
     logo: '/rival-badge.png',
+    backgroundLogoStyle: {
+      top: '20%',
+      left: '10%',
+    },
+    logoStyle: {
+      maxWidth: 150,
+    },
     slug: 'rival',
     timeRange: 'Feb. 2022 - Present',
-    description: [
+    skills: ['Javascript', 'React.js', 'Next.js', 'Express.js', 'PostgreSQL'],
+    responsibilities: [
       'Developed web pages and features for RivalGames.com, an admin portal, and other private sites for the company, all with CI/CD practices',
       'Designed and developed full-stack features, from initial concept to full-scale production implementation',
+    ],
+    technologies: [
       'Front-end development (React, Next): Designed and implemented responsive, modern webpages from the ground-up; created forms, modals, reusable components, etc.; implemented SSR and ISR',
       'Back-end development (Node, Express): REST API, cron services, OAuth, integrations, caching Technologies: React, Next, SWR, Node, Express, Sequelize, PostgreSQL, Formik, styled-components, SWR, Axios, Playwright, Pusher, Reddis',
       'Integrations: Stripe, Uploadcare, Discord, OAuth',
@@ -17,9 +27,17 @@ export const experience = [
     position: 'Software Engineer II',
     company: 'Special Aerospace Services',
     logo: '/sas.png',
+    backgroundLogoStyle: {
+      top: '-50%',
+      left: '10%',
+    },
+    logoStyle: {
+      maxWidth: 230,
+    },
     slug: 'sas',
     timeRange: 'May 2018 - Feb. 2022',
-    description: [
+    skills: ['Python', 'PyQt', 'Unix', 'XML', 'JIRA'],
+    responsibilities: [
       'Highest position: Software tools developer under contract with Sierra Nevada Corporation (SNC)',
       'Developing Python tools/programs - back-ends and GUIs (PyQt) under controlled Agile environment',
       'Web development (Node.js, Express.js, Bootstrap)',
@@ -32,30 +50,40 @@ export const experience = [
       'Developed test cases based on launch vehicle flight software requirements (requirements-driven testing), and in accordance with DO-178 standards, including MC/DC coverage',
       'Gained extensive knowledge of the Ada programming language, Tartan Ada compiler suite, and MIL-STD-1750a assembly',
     ],
+    technologies: [],
   },
   {
     position: 'Intern',
     company: 'Coloplast',
     logo: '/coloplast.png',
+    logoStyle: {
+      maxWidth: 150,
+    },
+    backgroundLogoStyle: {
+      top: '-100%',
+      left: '0%',
+    },
     slug: 'coloplast',
     timeRange: 'Summer 2016',
-    description: [
+    skills: ['Excel/VBA'],
+    responsibilities: [
       'Wrote various scripts to rename and organize files',
       'Analyzed documentation',
       'Various other tasks',
     ],
+    technologies: [],
   },
 ];
 
 export const webSkills = [
-  { name: 'Javascript', icon: 'js.png' },
+  { name: 'Javascript', icon: '/icons/js.png' },
   { name: 'React.js', logo: '/logos/react.png' },
   { name: 'Next.js', logo: '/logos/next.svg' },
   { name: 'Node.js', logo: '/logos/node.svg' },
   { name: 'Express.js', logo: '/logos/express.svg' },
   { name: 'Sequelize.js', logo: '/logos/sequelize.svg' },
   { name: 'styled-components', logo: '/logos/styled-components.png' },
-  { name: 'OAuth', icon: 'oauth.svg' },
+  { name: 'OAuth', icon: '/icons/oauth.svg' },
   { name: 'SWR', logo: '/logos/swr.svg' },
   { name: 'PostgreSQL', logo: '/logos/postgres.svg' },
   { name: 'MariaDB', logo: '/logos/mariadb.svg' },
@@ -66,16 +94,60 @@ export const webSkills = [
 ];
 
 export const otherSkills = [
-  { name: 'Python', logo: '/logos/css.svg' },
-  { name: 'C/C++', logo: '/logos/css.svg' },
-  { name: 'Unix', logo: '/logos/css.svg' },
-  { name: 'Bash', logo: '/logos/css.svg' },
-  { name: 'MATLAB', logo: '/logos/css.svg' },
-  { name: 'Excel/VBA', logo: '/logos/css.svg' },
-  { name: 'XML', logo: '/logos/css.svg' },
-  { name: 'Mathematica', logo: '/logos/css.svg' },
-  { name: 'Agile', logo: '/logos/css.svg' },
-  { name: 'JIRA', logo: '/logos/css.svg' },
-  { name: 'Ada', logo: '/logos/css.svg' },
-  { name: 'multi-threaded programming', logo: '/logos/css.svg' },
+  { name: 'Python', logo: '/logos/python.svg' },
+  { name: 'C/C++', icon: '/icons/cpp.svg' },
+  { name: 'Unix', logo: '/logos/unix.svg' },
+  { name: 'Bash', logo: '/logos/bash.png' },
+  { name: 'MATLAB', icon: '/icons/matlab.png' },
+  { name: 'Excel/VBA', icon: '/icons/excel.png' },
+  { name: 'XML', icon: '/icons/xml.png' },
+  { name: 'Mathematica', logo: '/logos/mathematica.webp' },
+  { name: 'Agile' },
+  { name: 'JIRA', logo: '/logos/jira.svg' },
+  { name: 'Ada', icon: '/icons/ada.png' },
+  { name: 'PyQt', icon: '/icons/pyqt.svg' },
+  { name: 'Multi-threaded' },
+];
+
+export const projects = [
+  {
+    name: 'player grid',
+    preview: '/previews/player-grid.png',
+    slug: 'player-grid',
+    link: 'https://player-grid.vercel.app/',
+    github: 'https://github.com/dklangevin/player-grid',
+    shortDescription: 'NBA Trivia Game',
+    description:
+      'Web-based NBA trivia game built with React and Next.js. Uses the NBA API and custom database. Github actions perform cron functions in order to optimize performance for the end-user.',
+  },
+  {
+    name: 'trackr',
+    preview: '/previews/trackr.png',
+    slug: 'trackr',
+    link: 'https://player-grid.vercel.app/',
+    github: 'https://github.com/dklangevin/player-grid',
+    shortDescription: 'Issue Tracking App',
+    description:
+      'Issue tracking app like JIRA, Linear, and others, built with React. This project intentionally uses very minimal JS libraries in order to gain experience implementing lower-level functions such as database modeling and querying, front-end data fetching, image-uploading, etc. This project features client and server codebases (both hosted on Netlify), elaborate database (using bit.io), and Cloudinary for image storage/hosting.',
+  },
+  {
+    name: 'daily',
+    preview: '/previews/daily.png',
+    slug: 'daily',
+    link: 'https://player-grid.vercel.app/',
+    github: 'https://github.com/dklangevin/player-grid',
+    shortDescription: 'Daily Goal Tracking App',
+  },
+  {
+    name: 'news',
+    slug: 'news',
+    github: 'https://github.com/dklangevin/news-app',
+    shortDescription: 'Simple News App',
+  },
+  {
+    name: 'weather',
+    slug: 'weather',
+    github: 'https://github.com/dklangevin/weather-app',
+    shortDescription: 'Simple Weather App',
+  },
 ];
