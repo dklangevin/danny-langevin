@@ -3,12 +3,21 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { experience } from '../../constants';
 import { useRouter } from 'next/router';
+import SkillCard from '../../components/SkillCard';
+import { webSkills, otherSkills } from '../../constants';
 
 export default function ExperienceBlock(props) {
   const router = useRouter();
   const { slug } = router.query;
-  const { position, company, logo, timeRange, description } =
-    experience.find((item) => item.slug === slug) || {};
+  const {
+    position,
+    company,
+    logo,
+    timeRange,
+    skills,
+    responsibilities,
+    technologies,
+  } = experience.find((e) => e.slug === slug) || {};
   return (
     <Container {...props}>
       <Content>
@@ -22,14 +31,35 @@ export default function ExperienceBlock(props) {
               <TimeRange>{timeRange}</TimeRange>
             </TopRow>
             <Company>{company}</Company>
-            <LearnMore href={`/experience/${slug}`}>Learn More</LearnMore>
           </Info>
         </Header>
+        <Subtitle>Featured Technologies</Subtitle>
+        <Skills>
+          {skills?.map((skill) => {
+            const { name, icon, logo } = [...webSkills, ...otherSkills].find(
+              (s) => s.name === skill
+            );
+            return (
+              <SkillCard key={skill} name={name} icon={icon} logo={logo} />
+            );
+          })}
+        </Skills>
+        <Subtitle>Responsibilities</Subtitle>
         <Description>
-          {description?.map((item, i) => (
+          {responsibilities?.map((item, i) => (
             <Item key={i}>{item}</Item>
           ))}
         </Description>
+        {technologies?.length > 0 && (
+          <>
+            <Subtitle>All Technologies</Subtitle>
+            <Description>
+              {technologies?.map((item, i) => (
+                <Item key={i}>{item}</Item>
+              ))}
+            </Description>
+          </>
+        )}
       </Content>
     </Container>
   );
@@ -43,6 +73,7 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
+  width: 100%;
   padding: 32px;
   display: flex;
   flex-direction: column;
@@ -113,4 +144,25 @@ const Description = styled.ul`
 const Item = styled.li`
   display: list-item;
   line-height: 22px;
+`;
+
+const Skills = styled.div`
+  display: flex;
+  gap: 16px;
+`;
+
+const Subtitle = styled.span`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  :after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0px;
+    border: 1px solid #eeeeee33;
+    margin-top: 1px;
+  }
 `;
