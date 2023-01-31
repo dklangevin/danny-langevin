@@ -3,9 +3,13 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Hidden from 'components/Hidden';
 import { IconMenu } from 'icons';
+import { useRouter } from 'next/router';
 
 export default function Nav() {
   const [isTransparent, setIsTransparent] = useState(true);
+
+  const { pathname } = useRouter();
+  console.log(pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +28,7 @@ export default function Nav() {
   const items = [
     {
       label: 'Experience',
-      href: '/#experience',
+      href: '/experience',
     },
     {
       label: 'Projects',
@@ -32,7 +36,7 @@ export default function Nav() {
     },
     {
       label: 'Skills',
-      href: '/#skills',
+      href: '/skills',
     },
     {
       label: 'Education',
@@ -51,7 +55,7 @@ export default function Nav() {
           <Name href='/'>Danny Langevin</Name>
           <List>
             {items.map(({ label, href }, i) => (
-              <Item key={i}>
+              <Item key={i} selected={pathname === href}>
                 <a href={href}>{label}</a>
               </Item>
             ))}
@@ -78,8 +82,8 @@ const Container = styled.div`
     !isTransparent &&
     css`
       /* background: linear-gradient(to right, #2b5876cc, #256e5bcc); */
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(32px);
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
       outline: 1px solid white;
     `}
 `;
@@ -88,7 +92,6 @@ const Content = styled.div`
   height: 80px;
   display: flex;
   align-items: center;
-  font-family: 'Monument';
   padding: 16px;
 `;
 
@@ -99,7 +102,7 @@ const Name = styled(Link)`
   /* text-transform: uppercase; */
   /* letter-spacing: 0.4rem; */
   margin: 0 auto 0 16px;
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
   cursor: pointer;
   :hover {
     color: turquoise;
@@ -111,14 +114,22 @@ const List = styled.ul`
 `;
 
 const Item = styled.li`
-  font-size: 14px;
-  font-weight: 200;
+  font-size: 20px;
+  font-weight: 400;
   /* text-transform: uppercase; */
   padding: 16px;
   border-radius: 8px;
   cursor: pointer;
+  ${({ selected }) =>
+    selected &&
+    css`
+      color: var(--celeste);
+      font-weight: 500;
+      /* background: rgba(0, 0, 0, 0.3); */
+    `}
   :hover {
     background: rgba(0, 0, 0, 0.3);
+    /* font-weight: 400; */
   }
 `;
 

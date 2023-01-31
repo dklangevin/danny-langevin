@@ -7,15 +7,13 @@ export default function Skills() {
     <Container>
       <Content>
         <Title>Skills</Title>
-        <SkillsGroup>
-          {/* <SkillType>Web</SkillType> */}
-          <WrapSkills>
-            {webSkills?.map(({ name, icon, logo }, i) => (
-              <SkillCard name={name} icon={icon} logo={logo} key={i} />
-            ))}
-          </WrapSkills>
-        </SkillsGroup>
-
+        <SkillType>Web</SkillType>
+        <WrapSkills>
+          {webSkills?.map(({ name, icon, logo }, i) => (
+            <SkillCard name={name} icon={icon} logo={logo} key={i} />
+          ))}
+        </WrapSkills>
+        <SkillType>Other</SkillType>
         <WrapSkills>
           {otherSkills?.map(({ name, icon, logo }, i) => (
             <SkillCard name={name} icon={icon} logo={logo} key={i} />
@@ -78,15 +76,8 @@ const SkillsGroup = styled.div`
 `;
 
 const SkillType = styled.span`
-  font-weight: 900;
-  font-size: max(5.5vw, 32px);
-  line-height: max(4.8vw, 28px);
+  font-weight: 500;
+  font-size: 40px;
   text-transform: uppercase;
   display: inline-block;
-  @supports ((text-stroke: 2px white) or (-webkit-text-stroke: 2px white)) {
-    color: transparent;
-    -webkit-text-stroke: 2px white;
-    text-stroke: 2px white;
-    text-shadow: none;
-  }
 `;
