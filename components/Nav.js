@@ -4,16 +4,16 @@ import { useState, useEffect } from 'react';
 import Hidden from 'components/Hidden';
 import { IconMenu } from 'icons';
 import { useRouter } from 'next/router';
+import { navItems } from '@/constants';
 
-export default function Nav() {
+export default function Nav({ onOpenMobileNav }) {
   const [isTransparent, setIsTransparent] = useState(true);
 
   const { pathname } = useRouter();
-  console.log(pathname);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.pageYOffset > 100) {
+      if (window.pageYOffset > 50) {
         setIsTransparent(false);
       } else {
         setIsTransparent(true);
@@ -25,36 +25,13 @@ export default function Nav() {
     };
   }, []);
 
-  const items = [
-    {
-      label: 'Experience',
-      href: '/experience',
-    },
-    {
-      label: 'Projects',
-      href: '/projects',
-    },
-    {
-      label: 'Skills',
-      href: '/skills',
-    },
-    {
-      label: 'Education',
-      href: '/education',
-    },
-    {
-      label: 'Contact',
-      href: '/contact',
-    },
-  ];
-
   return (
     <Container isTransparent={isTransparent}>
-      <Hidden breakpoint={780} fullWidth>
+      <Hidden breakpoint={940} fullWidth>
         <Content>
           <Name href='/'>Danny Langevin</Name>
           <List>
-            {items.map(({ label, href }, i) => (
+            {navItems.map(({ label, href }, i) => (
               <li key={i}>
                 <Item href={href} selected={pathname === href}>
                   {label}
@@ -64,9 +41,10 @@ export default function Nav() {
           </List>
         </Content>
       </Hidden>
-      <Hidden mobile breakpoint={780} fullWidth>
+      <Hidden mobile breakpoint={940} fullWidth>
         <Content>
-          <MenuIcon />
+          <MenuIcon onClick={onOpenMobileNav} />
+          <MobileName href='/'>Danny Langevin</MobileName>
         </Content>
       </Hidden>
     </Container>
@@ -98,13 +76,15 @@ const Content = styled.div`
 `;
 
 const Name = styled(Link)`
-  font-weight: 700;
-  font-size: 28px;
-  font-style: italic;
+  /* font-family: 'Glamsy'; */
+  font-family: 'Lemon Milk';
+  font-weight: 400;
+  font-size: 24px;
+  /* font-style: italic; */
   /* text-transform: uppercase; */
-  letter-spacing: 0.2rem;
+  /* letter-spacing: 0.2rem; */
   margin: 0 auto 0 16px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   cursor: pointer;
   :hover {
     color: turquoise;
@@ -117,9 +97,11 @@ const List = styled.ul`
 `;
 
 const Item = styled.a`
-  font-size: 20px;
-  font-weight: 400;
+  font-family: 'Lemon Milk';
+  font-size: 18px;
+  font-weight: 200;
   /* text-transform: uppercase; */
+  /* letter-spacing: 0.2ch; */
   padding: 16px;
   border-radius: 8px;
   cursor: pointer;
@@ -139,4 +121,19 @@ const MenuIcon = styled(IconMenu)`
   width: 40px;
   height: 40px;
   cursor: pointer;
+`;
+
+const MobileName = styled(Link)`
+  font-family: 'Lemon Milk';
+  /* font-family: 'Glamsy'; */
+  font-weight: 400;
+  font-size: 24px;
+  margin: 0 auto;
+  cursor: pointer;
+  :hover {
+    color: turquoise;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 20px;
+  }
 `;
