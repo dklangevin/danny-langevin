@@ -33,7 +33,11 @@ export default function Nav({ onOpenMobileNav }) {
           <List>
             {navItems.map(({ label, href }, i) => (
               <li key={i}>
-                <Item href={href} selected={pathname === href}>
+                <Item
+                  href={href}
+                  selected={pathname === href}
+                  light={!isTransparent}
+                >
                   {label}
                 </Item>
               </li>
@@ -52,6 +56,8 @@ export default function Nav({ onOpenMobileNav }) {
 }
 
 const Container = styled.div`
+  font-family: 'Right Gothic Wide';
+  font-size: 24px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -77,14 +83,13 @@ const Content = styled.div`
 
 const Name = styled(Link)`
   /* font-family: 'Glamsy'; */
-  font-family: 'Lemon Milk';
-  font-weight: 400;
-  font-size: 24px;
+  /* font-family: 'Lemon Milk'; */
+  font-weight: 470;
   /* font-style: italic; */
   /* text-transform: uppercase; */
   /* letter-spacing: 0.2rem; */
   margin: 0 auto 0 16px;
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
   cursor: pointer;
   :hover {
     color: turquoise;
@@ -97,21 +102,26 @@ const List = styled.ul`
 `;
 
 const Item = styled.a`
-  font-family: 'Lemon Milk';
-  font-size: 18px;
+  /* font-family: 'Lemon Milk'; */
   font-weight: 200;
   /* text-transform: uppercase; */
+  font-size: 22px;
   /* letter-spacing: 0.2ch; */
   padding: 16px;
   border-radius: 8px;
   cursor: pointer;
-  ${({ selected }) =>
+  ${({ selected, light }) =>
     selected &&
-    css`
-      /* color: var(--celeste); */
-      background: rgba(0, 0, 0, 0.3);
-      font-weight: 500;
-    `}
+    (light
+      ? css`
+          color: var(--celeste);
+          font-weight: 500;
+        `
+      : css`
+          /* color: var(--celeste); */
+          background: rgba(0, 0, 0, 0.3);
+          font-weight: 500;
+        `)}
   :hover {
     background: #97efe955;
   }
@@ -124,10 +134,9 @@ const MenuIcon = styled(IconMenu)`
 `;
 
 const MobileName = styled(Link)`
-  font-family: 'Lemon Milk';
-  /* font-family: 'Glamsy'; */
-  font-weight: 400;
+  font-weight: 630;
   font-size: 24px;
+  text-transform: uppercase;
   margin: 0 auto;
   cursor: pointer;
   :hover {

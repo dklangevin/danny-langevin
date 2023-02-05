@@ -105,8 +105,9 @@ const Position = styled.span`
 
 const Company = styled.span`
   /* font-family: 'Glamsy'; */
+  font-family: 'Right Gothic Wide';
   font-size: 26px;
-  font-weight: 800;
+  font-weight: 470;
   /* text-transform: uppercase; */
   letter-spacing: 0.1ch;
   color: var(--celeste);
