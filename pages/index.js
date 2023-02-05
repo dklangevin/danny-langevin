@@ -106,6 +106,7 @@ const Name = styled.span`
 `;
 
 const Title = styled.span`
+  font-family: 'Right Gothic Wide';
   font-weight: 800;
   font-size: max(5.3vw, 32px);
   line-height: max(4.6vw, 28px);
