@@ -251,6 +251,62 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Rader';
+  src: url('/fonts/PPRader-Thin.otf') format('opentype');
+  font-weight: 260;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Rader';
+  src: url('/fonts/PPRader-Regular.otf') format('opentype');
+  font-weight: 630;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Rader';
+  src: url('/fonts/PPRader-Bold.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Right Gothic Spatial';
+  src: url('/fonts/RightGothic/PPRightGothic-SpatialFine.otf')
+    format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Right Gothic Spatial';
+  src: url('/fonts/RightGothic/PPRightGothic-SpatialBlack.otf')
+    format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Right Gothic Wide';
+  src: url('/fonts/RightGothic/PPRightGothic-WideMedium.otf')
+    format('opentype');
+  font-weight: 470;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Right Gothic Wide';
+  src: url('/fonts/RightGothic/PPRightGothic-WideBlack.otf')
+    format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
