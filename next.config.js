@@ -115,6 +115,25 @@ const nextConfig = withFonts({
           },
         ],
       },
+      // Right Gothic Wide
+      {
+        source: '/fonts/RightGothic/PPRightGothic-WideMedium.otf',
+        headers: [
+          {
+            key: 'Cache-control',
+            value: 'public, immutable, max-age=31536000',
+          },
+        ],
+      },
+      {
+        source: '/fonts/RightGothic/PPRightGothic-WideBlack.otf',
+        headers: [
+          {
+            key: 'Cache-control',
+            value: 'public, immutable, max-age=31536000',
+          },
+        ],
+      },
     ];
   },
 });

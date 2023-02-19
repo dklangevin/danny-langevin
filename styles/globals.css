@@ -127,35 +127,6 @@
 }
 
 @font-face {
-  font-family: 'Acma';
-  src: url('/fonts/PPAcma-Thin.otf') format('opentype');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Acma';
-  src: url('/fonts/PPAcma-Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Acma';
-  src: url('/fonts/PPAcma-Semibold.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Acma';
-  src: url('/fonts/PPAcma-Black.otf') format('opentype');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'Monument';
   src: url('/fonts/PPMonumentExtended-Light.otf') format('opentype');
   font-weight: 200;
@@ -199,76 +170,9 @@
 }
 
 @font-face {
-  font-family: 'Formula Condensed';
-  src: url('/fonts/PPFormula-CondensedBlack.otf') format('opentype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Formula';
-  src: url('/fonts/PPFormula-Medium.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Formula Extended';
-  src: url('/fonts/PPFormula-ExtendedBold.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'Glamsy';
   src: url('/fonts/Glamsy.ttf') format('truetype');
   /* font-weight: 600; */
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Sergio Trendy';
-  src: url('/fonts/Sergio Trendy.ttf') format('truetype');
-  /* font-weight: 600; */
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Lemon Milk';
-  src: url('/fonts/LEMONMILK-Medium.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Lemon Milk';
-  src: url('/fonts/LEMONMILK-Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Rader';
-  src: url('/fonts/PPRader-Thin.otf') format('opentype');
-  font-weight: 260;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Rader';
-  src: url('/fonts/PPRader-Regular.otf') format('opentype');
-  font-weight: 630;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Rader';
-  src: url('/fonts/PPRader-Bold.otf') format('opentype');
-  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
@@ -292,16 +196,14 @@
 
 @font-face {
   font-family: 'Right Gothic Wide';
-  src: url('/fonts/RightGothic/PPRightGothic-WideMedium.otf')
-    format('opentype');
+  src: url('/fonts/RightGothic/PPRightGothic-WideMedium.otf') format('opentype');
   font-weight: 470;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Right Gothic Wide';
-  src: url('/fonts/RightGothic/PPRightGothic-WideBlack.otf')
-    format('opentype');
+  src: url('/fonts/RightGothic/PPRightGothic-WideBlack.otf') format('opentype');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
