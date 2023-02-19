@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import Nav from 'components/Nav';
-import { HEIGHT_MARGIN } from 'constants';
+import { HEIGHT_MARGIN } from '../constants';
 
 export default function Home() {
   return (

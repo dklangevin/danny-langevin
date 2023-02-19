@@ -35,36 +35,8 @@ export default function Education(props) {
               <Degree>B.S. in Electrical & Computer Engineering</Degree>
               <TimeRange>Graduated in May, 2019</TimeRange>
             </TopRow>
-            {/* <Company>{company}</Company> */}
           </Info>
         </Header>
-        {/* <Subtitle>Featured Technologies</Subtitle>
-        <Skills>
-          {skills?.map((skill) => {
-            const { name, icon, logo } = [...webSkills, ...otherSkills].find(
-              (s) => s.name === skill
-            );
-            return (
-              <SkillCard key={skill} name={name} icon={icon} logo={logo} />
-            );
-          })}
-        </Skills>
-        <Subtitle>Responsibilities</Subtitle>
-        <Description>
-          {responsibilities?.map((item, i) => (
-            <Item key={i}>{item}</Item>
-          ))}
-        </Description>
-        {technologies?.length > 0 && (
-          <>
-            <Subtitle>All Technologies</Subtitle>
-            <Description>
-              {technologies?.map((item, i) => (
-                <Item key={i}>{item}</Item>
-              ))}
-            </Description>
-          </>
-        )} */}
       </Content>
     </Container>
   );
@@ -74,6 +46,9 @@ const Container = styled.div`
   width: 100%;
   min-height: calc(100vh - ${HEIGHT_MARGIN}px);
   padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Content = styled.div`
@@ -128,42 +103,4 @@ const WrapImage = styled.div`
 const CompanyImage = styled(Image)`
   object-fit: contain;
   object-position: left;
-`;
-
-const LearnMore = styled(Link)`
-  text-decoration: underline;
-`;
-
-const Description = styled.ul`
-  list-style-type: disc;
-  font-size: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-`;
-
-const Item = styled.li`
-  display: list-item;
-  line-height: 22px;
-`;
-
-const Skills = styled.div`
-  display: flex;
-  gap: 16px;
-`;
-
-const Subtitle = styled.span`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-  :after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 0px;
-    border: 1px solid #eeeeee33;
-    margin-top: 1px;
-  }
 `;
