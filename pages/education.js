@@ -3,28 +3,29 @@ import Link from 'next/link';
 import Image from 'next/image';
 import cuBoulderLogo from 'public/logos/cuboulder.svg';
 import cuBoulderLogoVeritcal from 'public/logos/cuboulder-vertical.svg';
-import Hidden from '@/components/Hidden';
+import Hidden from 'components/Hidden';
+import { HEIGHT_MARGIN } from '../constants';
 
 export default function Education(props) {
   return (
     <Container {...props}>
       <Content>
         <Header>
-          <Hidden>
+          <Hidden breakpoint={600}>
             <WrapImage>
               <CompanyImage
                 src={cuBoulderLogo}
-                alt='company-logo'
+                alt="company-logo"
                 fill
-                sizes='800px'
+                sizes="800px"
               />
             </WrapImage>
           </Hidden>
-          <Hidden mobile>
+          <Hidden mobile breakpoint={600}>
             <WrapImage>
               <CompanyImage
                 src={cuBoulderLogoVeritcal}
-                alt='company-logo'
+                alt="company-logo"
                 fill
               />
             </WrapImage>
@@ -71,8 +72,7 @@ export default function Education(props) {
 
 const Container = styled.div`
   width: 100%;
-  display: flex;
-  justify-content: center;
+  min-height: calc(100vh - ${HEIGHT_MARGIN}px);
   padding: 32px;
 `;
 
@@ -121,12 +121,13 @@ const TimeRange = styled.span`
 
 const WrapImage = styled.div`
   width: 100%;
-  height: 200px;
+  min-height: 120px;
   position: relative;
 `;
 
 const CompanyImage = styled(Image)`
   object-fit: contain;
+  object-position: left;
 `;
 
 const LearnMore = styled(Link)`
