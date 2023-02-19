@@ -4,6 +4,11 @@ import coloplastLogo from 'public/coloplast.png';
 import playerGridPreview from 'public/previews/player-grid.png';
 import dailyPreview from 'public/previews/daily.png';
 import trackrPreview from 'public/previews/trackr.png';
+import { IconEmail, IconGithub, IconLinkedIn, IconPhone } from 'icons';
+
+export const HEADER_HEIGHT = 80;
+export const FOOTER_HEIGHT = 100;
+export const HEIGHT_MARGIN = HEADER_HEIGHT + FOOTER_HEIGHT;
 
 export const navItems = [
   {
@@ -26,6 +31,28 @@ export const navItems = [
     label: 'Contact',
     href: '/contact',
   },
+];
+
+export const socials = [
+  {
+    type: 'Github',
+    value: 'github.com/dklangevin',
+    link: 'https://github.com/dklangevin',
+    Icon: IconGithub,
+  },
+  {
+    type: 'LinkedIn',
+    value: 'linkedin.com/in/dannylangevin',
+    link: 'https://www.linkedin.com/in/dannylangevin',
+    Icon: IconLinkedIn,
+  },
+  {
+    type: 'Email',
+    value: 'dklangevin@gmail.com',
+    link: 'mailto:dklangevin@gmail.com',
+    Icon: IconEmail,
+  },
+  { type: 'Phone', value: '(952) 594-0482', Icon: IconPhone },
 ];
 
 export const experience = [
@@ -112,6 +139,7 @@ export const webSkills = [
   { name: 'Node.js', logo: '/logos/node.svg' },
   { name: 'Express.js', logo: '/logos/express.svg' },
   { name: 'Sequelize.js', logo: '/logos/sequelize.svg' },
+  { name: 'Axios', logo: '/logos/axios.svg' },
   { name: 'styled-components', logo: '/logos/styled-components.png' },
   { name: 'OAuth', icon: '/icons/oauth.svg' },
   { name: 'SWR', logo: '/logos/swr.svg' },
@@ -136,8 +164,10 @@ export const otherSkills = [
   { name: 'JIRA', logo: '/logos/jira.svg' },
   { name: 'Ada', icon: '/icons/ada.png' },
   { name: 'PyQt', icon: '/icons/pyqt.svg' },
-  { name: 'Multi-threaded' },
+  // { name: 'Multi-threaded' },
 ];
+
+export const allSkills = [...webSkills, ...otherSkills];
 
 export const projects = [
   {
@@ -149,6 +179,20 @@ export const projects = [
     shortDescription: 'NBA Trivia Game',
     description:
       'Web-based NBA trivia game built with React and Next.js. Uses the NBA API and custom database. Github actions perform cron functions in order to optimize performance for the end-user.',
+    technologies: [
+      'React.js',
+      'Axios',
+      'Node.js',
+      'Next.js',
+      'PostgreSQL',
+      'styled-components',
+    ],
+    otherTechnologies: [
+      'Next.js Serverless API Functions',
+      'NBA Stats Database Fetching',
+      'Github Actions',
+      'Vercel',
+    ],
   },
   {
     name: 'trackr',
@@ -159,6 +203,21 @@ export const projects = [
     shortDescription: 'Issue Tracking App',
     description:
       'Issue tracking app like JIRA, Linear, and others, built with React. This project intentionally uses very minimal JS libraries in order to gain experience implementing lower-level functions such as database modeling and querying, front-end data fetching, image-uploading, etc. This project features client and server codebases (both hosted on Netlify), elaborate database (using bit.io), and Cloudinary for image storage/hosting.',
+    technologies: [
+      'React.js',
+      'Axios',
+      'Node.js',
+      'Next.js',
+      'PostgreSQL',
+      'Express.js',
+      'styled-components',
+    ],
+    otherTechnologies: [
+      'Full Stack Application',
+      'Image-uploading',
+      'Cloudinary',
+      'Netlify',
+    ],
   },
   {
     name: 'daily',
@@ -167,17 +226,23 @@ export const projects = [
     link: 'https://player-grid.vercel.app/',
     github: 'https://github.com/dklangevin/player-grid',
     shortDescription: 'Daily Goal Tracking App',
+    technologies: ['React.js', 'Next.js', 'styled-components'],
+    otherTechnologies: [],
   },
   {
     name: 'news',
     slug: 'news',
     github: 'https://github.com/dklangevin/news-app',
     shortDescription: 'Simple News App',
+    technologies: ['React.js'],
+    otherTechnologies: [],
   },
   {
     name: 'weather',
     slug: 'weather',
     github: 'https://github.com/dklangevin/weather-app',
     shortDescription: 'Simple Weather App',
+    technologies: ['React.js'],
+    otherTechnologies: [],
   },
 ];
