@@ -1,9 +1,9 @@
+import Hidden from 'components/Hidden';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { projects } from '../../constants';
-import Image from 'next/image';
-import { useState } from 'react';
-import Link from 'next/link';
-import Hidden from '@/components/Hidden';
 
 export default function Projects() {
   const [preview, setPreview] = useState();
@@ -23,7 +23,7 @@ export default function Projects() {
       </List>
       <WrapPreview>
         <Hidden fullWidth breakpoint={540}>
-          {preview && <Preview src={preview} fill sizes='900px'></Preview>}
+          {preview && <Preview src={preview} fill sizes="900px"></Preview>}
         </Hidden>
       </WrapPreview>
     </Container>

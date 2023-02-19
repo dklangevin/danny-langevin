@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Hidden from 'components/Hidden';
 import { IconMenu } from 'icons';
 import { useRouter } from 'next/router';
-import { navItems } from '@/constants';
+import { navItems } from '../constants';
 
 const BREAKPOINT = 940;
 

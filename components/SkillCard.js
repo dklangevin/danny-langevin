@@ -3,17 +3,17 @@ import Image from 'next/image';
 import {
   generateLinearGradientBackground,
   generateSolidBackground,
-} from '@/util';
+} from '../util';
 
 export default function SkillCard({ name, icon, logo }) {
   return icon ? (
     <Container>
-      <Icon src={icon} alt='icon' width={50} height={50} />
+      <Icon src={icon} alt="icon" width={50} height={50} />
       {name}
     </Container>
   ) : logo ? (
     <Container>
-      <Logo src={logo} alt='logo' height={50} width={200} />
+      <Logo src={logo} alt="logo" height={50} width={200} />
     </Container>
   ) : (
     <Container>
