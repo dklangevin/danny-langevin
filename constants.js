@@ -43,7 +43,7 @@ export const socials = [
   {
     type: 'LinkedIn',
     value: 'linkedin.com/in/dannylangevin',
-    link: 'https://www.linkedin.com/in/dannylangevin',
+    link: 'https://www.linkedin.com/in/dannylangevin/',
     Icon: IconLinkedIn,
   },
   {
@@ -229,20 +229,20 @@ export const projects = [
     technologies: ['React.js', 'Next.js', 'styled-components'],
     otherTechnologies: [],
   },
-  {
-    name: 'news',
-    slug: 'news',
-    github: 'https://github.com/dklangevin/news-app',
-    shortDescription: 'Simple News App',
-    technologies: ['React.js'],
-    otherTechnologies: [],
-  },
-  {
-    name: 'weather',
-    slug: 'weather',
-    github: 'https://github.com/dklangevin/weather-app',
-    shortDescription: 'Simple Weather App',
-    technologies: ['React.js'],
-    otherTechnologies: [],
-  },
+  // {
+  //   name: 'news',
+  //   slug: 'news',
+  //   github: 'https://github.com/dklangevin/news-app',
+  //   shortDescription: 'Simple News App',
+  //   technologies: ['React.js'],
+  //   otherTechnologies: [],
+  // },
+  // {
+  //   name: 'weather',
+  //   slug: 'weather',
+  //   github: 'https://github.com/dklangevin/weather-app',
+  //   shortDescription: 'Simple Weather App',
+  //   technologies: ['React.js'],
+  //   otherTechnologies: [],
+  // },
 ];
