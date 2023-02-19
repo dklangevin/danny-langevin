@@ -6,6 +6,8 @@ import { IconMenu } from 'icons';
 import { useRouter } from 'next/router';
 import { navItems } from '@/constants';
 
+const BREAKPOINT = 940;
+
 export default function Nav({ onOpenMobileNav }) {
   const [isTransparent, setIsTransparent] = useState(true);
 
@@ -27,9 +29,9 @@ export default function Nav({ onOpenMobileNav }) {
 
   return (
     <Container isTransparent={isTransparent}>
-      <Hidden breakpoint={940} fullWidth>
+      <Hidden breakpoint={BREAKPOINT} fullWidth>
         <Content>
-          <Name href='/'>Danny Langevin</Name>
+          <Name href="/">Danny Langevin</Name>
           <List>
             {navItems.map(({ label, href }, i) => (
               <li key={i}>
@@ -45,10 +47,10 @@ export default function Nav({ onOpenMobileNav }) {
           </List>
         </Content>
       </Hidden>
-      <Hidden mobile breakpoint={940} fullWidth>
+      <Hidden mobile breakpoint={BREAKPOINT} fullWidth>
         <Content>
           <MenuIcon onClick={onOpenMobileNav} />
-          <MobileName href='/'>Danny Langevin</MobileName>
+          <Name href="/">Danny Langevin</Name>
         </Content>
       </Hidden>
     </Container>
@@ -82,17 +84,15 @@ const Content = styled.div`
 `;
 
 const Name = styled(Link)`
-  /* font-family: 'Glamsy'; */
-  /* font-family: 'Lemon Milk'; */
   font-weight: 470;
-  /* font-style: italic; */
-  /* text-transform: uppercase; */
-  /* letter-spacing: 0.2rem; */
   margin: 0 auto 0 16px;
   text-transform: uppercase;
   cursor: pointer;
   :hover {
     color: turquoise;
+  }
+  @media screen and (max-width: ${BREAKPOINT}px) {
+    margin-inline: auto;
   }
 `;
 
@@ -130,6 +130,8 @@ const Item = styled.a`
 const MenuIcon = styled(IconMenu)`
   width: 40px;
   height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   cursor: pointer;
 `;
 

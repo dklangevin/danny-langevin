@@ -89,7 +89,8 @@ const SkillsGroup = styled.div`
 `;
 
 const SkillType = styled.span`
-  font-family: 'Glamsy';
+  /* font-family: 'Glamsy'; */
+  font-family: 'Right Gothic Wide';
   width: 100%;
   display: flex;
   align-items: center;

@@ -3,6 +3,7 @@ import MobileNav from './components/MobileNav';
 import Nav from './components/Nav';
 import { useState } from 'react';
 import css from 'styled-jsx/css';
+import Footer from 'components/Footer';
 
 export default function Layout({ Component, pageProps }) {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -13,6 +14,7 @@ export default function Layout({ Component, pageProps }) {
       {mobileNavOpen && <MobileNav onClose={() => setMobileNavOpen(false)} />}
       <Content>
         <Component {...pageProps} />
+        <Footer />
       </Content>
     </Container>
   );
@@ -32,11 +34,6 @@ const Container = styled.div`
 
 const Content = styled.div`
   width: 100%;
-  height: 100%;
-  /* height: calc(100vh - 80px); */
-  /* position: absolute;
-  top: 80px;
-  left: 0; */
   margin-top: 80px;
   z-index: 1;
 `;

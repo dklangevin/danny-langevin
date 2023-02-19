@@ -56,8 +56,9 @@ const List = styled.ul`
 `;
 
 const Item = styled.a`
-  font-family: 'Lemon Milk';
-  font-size: 18px;
+  /* font-family: 'Lemon Milk'; */
+  font-family: 'Right Gothic Wide';
+  font-size: 22px;
   font-weight: 200;
   /* text-transform: uppercase; */
   /* letter-spacing: 0.2ch; */
@@ -68,7 +69,6 @@ const Item = styled.a`
     selected &&
     css`
       background: rgba(100, 100, 100, 0.3);
-      /* font-weight: 500; */
     `}
   :hover {
     outline: 1px solid white;

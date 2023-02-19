@@ -31,8 +31,6 @@ export default function Experience() {
 const Container = styled.div`
   width: 100%;
   min-height: calc(100vh - 80px);
-  background: linear-gradient(to bottom, #00000000 0%, #222222cc 50%);
-  /* margin-bottom: -1px; */
   padding: 64px;
   display: flex;
   align-items: center;
