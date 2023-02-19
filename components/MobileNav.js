@@ -1,8 +1,7 @@
-import styled, { css } from 'styled-components';
-import { useState } from 'react';
-import { navItems } from '@/constants';
 import { useRouter } from 'next/router';
-import { IconClose } from '@/icons';
+import styled, { css } from 'styled-components';
+import { navItems } from '../constants';
+import { IconClose } from '../icons';
 
 export default function MobileNav({ onClose, options, setOptions }) {
   const { pathname } = useRouter();
