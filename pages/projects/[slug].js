@@ -74,7 +74,7 @@ export default function Projects() {
           ))}
         </Technologies>
 
-        {otherTechnologies.length > 0 && (
+        {otherTechnologies?.length > 0 && (
           <>
             <Subtitle>Other Technologies</Subtitle>
             <OtherTechnologies>
