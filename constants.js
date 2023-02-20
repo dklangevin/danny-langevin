@@ -202,7 +202,7 @@ export const projects = [
     github: 'https://github.com/dklangevin/player-grid',
     shortDescription: 'Issue Tracking App',
     description:
-      'Issue tracking app like JIRA, Linear, and others, built with React. This project intentionally uses very minimal JS libraries in order to gain experience implementing lower-level functions such as database modeling and querying, front-end data fetching, image-uploading, etc. This project features client and server codebases (both hosted on Netlify), elaborate database (using bit.io), and Cloudinary for image storage/hosting.',
+      'Issue tracking app like JIRA, Linear, and others, built with React. This project intentionally uses very minimal JS libraries in order to gain experience implementing lower-level functions such as database modeling and querying, front-end data fetching, image-uploading, etc. This project features client and server codebases (both hosted on Netlify), elaborate database (using bit.io), and Cloudinary for image storage/hosting. Currently in development.',
     technologies: [
       'React.js',
       'Axios',
@@ -214,7 +214,7 @@ export const projects = [
     ],
     otherTechnologies: [
       'Full Stack Application',
-      'Image-uploading',
+      'Image Uploading',
       'Cloudinary',
       'Netlify',
     ],
@@ -223,9 +223,11 @@ export const projects = [
     name: 'daily',
     preview: dailyPreview,
     slug: 'daily',
-    link: 'https://player-grid.vercel.app/',
-    github: 'https://github.com/dklangevin/player-grid',
+    link: 'https://langevin-daily.vercel.app/',
+    github: 'https://github.com/dklangevin/daily',
     shortDescription: 'Daily Goal Tracking App',
+    description:
+      'Simple goal tracking app made with Next.js. Currently in development.',
     technologies: ['React.js', 'Next.js', 'styled-components'],
     otherTechnologies: [],
   },
