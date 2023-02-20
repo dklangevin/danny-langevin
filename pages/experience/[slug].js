@@ -5,6 +5,7 @@ import { experience } from '../../constants';
 import { useRouter } from 'next/router';
 import SkillCard from '../../components/SkillCard';
 import { webSkills, otherSkills } from '../../constants';
+import Hidden from 'components/Hidden';
 
 export default function ExperienceBlock(props) {
   const router = useRouter();
@@ -23,14 +24,19 @@ export default function ExperienceBlock(props) {
       <Content>
         <Header>
           <WrapImage>
-            <CompanyImage src={logo} alt='company-logo' fill sizes='200px' />
+            <CompanyImage src={logo} alt="company-logo" fill sizes="200px" />
           </WrapImage>
           <Info>
             <TopRow>
               <Position>{position}</Position>
-              <TimeRange>{timeRange}</TimeRange>
+              <Hidden breakpoint={650}>
+                <TimeRange>{timeRange}</TimeRange>
+              </Hidden>
             </TopRow>
             <Company>{company}</Company>
+            <Hidden mobile breakpoint={650}>
+              <TimeRange>{timeRange}</TimeRange>
+            </Hidden>
           </Info>
         </Header>
         <Subtitle>Featured Technologies</Subtitle>
@@ -108,6 +114,10 @@ const Position = styled.span`
   font-weight: 800;
   line-height: 36px;
   text-transform: uppercase;
+  @media screen and (max-width: 440px) {
+    font-size: 24px;
+    line-height: 26px;
+  }
 `;
 
 const Company = styled.span`
@@ -115,14 +125,26 @@ const Company = styled.span`
   font-weight: 800;
   text-transform: uppercase;
   color: var(--celeste);
+  @media screen and (max-width: 440px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
 `;
 
-const TimeRange = styled.span``;
+const TimeRange = styled.span`
+  @media screen and (min-width: 651px) {
+    padding-left: 16px;
+  }
+`;
 
 const WrapImage = styled.div`
   min-width: 100px;
   min-height: 100px;
   position: relative;
+  @media screen and (max-width: 440px) {
+    min-width: 60px;
+    min-height: 60px;
+  }
 `;
 
 const CompanyImage = styled(Image)`
@@ -147,8 +169,9 @@ const Item = styled.li`
 `;
 
 const Skills = styled.div`
-  display: flex;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 16px;
 `;
 
 const Subtitle = styled.span`

@@ -74,12 +74,16 @@ export default function Projects() {
           ))}
         </Technologies>
 
-        <Subtitle>Other Technologies</Subtitle>
-        <OtherTechnologies>
-          {otherTechnologies?.map((otherTechnology, i) => (
-            <OtherTechnology key={i}>{otherTechnology}</OtherTechnology>
-          ))}
-        </OtherTechnologies>
+        {otherTechnologies.length > 0 && (
+          <>
+            <Subtitle>Other Technologies</Subtitle>
+            <OtherTechnologies>
+              {otherTechnologies?.map((otherTechnology, i) => (
+                <OtherTechnology key={i}>{otherTechnology}</OtherTechnology>
+              ))}
+            </OtherTechnologies>
+          </>
+        )}
       </Content>
     </Container>
   );

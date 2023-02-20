@@ -1,19 +1,29 @@
-import styled from 'styled-components';
 import Image from 'next/image';
-import {
-  generateLinearGradientBackground,
-  generateSolidBackground,
-} from '../util';
+import styled from 'styled-components';
+import { generateSolidBackground } from '../util';
+import Hidden from './Hidden';
+
+const BREAKPOINT = 650;
 
 export default function SkillCard({ name, icon, logo }) {
   return icon ? (
     <Container>
-      <Icon src={icon} alt="icon" width={50} height={50} />
+      <WrapIcon breakpoint={BREAKPOINT}>
+        <Icon src={icon} alt="icon" width={50} height={50} />
+      </WrapIcon>
+      <WrapIcon mobile breakpoint={BREAKPOINT}>
+        <Icon src={icon} alt="icon" width={30} height={30} />
+      </WrapIcon>
       {name}
     </Container>
   ) : logo ? (
     <Container>
-      <Logo src={logo} alt="logo" height={50} width={200} />
+      <Hidden breakpoint={BREAKPOINT}>
+        <Logo src={logo} alt="logo" height={50} width={200} />
+      </Hidden>
+      <Hidden mobile breakpoint={BREAKPOINT}>
+        <Logo src={logo} alt="logo" height={30} width={160} />
+      </Hidden>
     </Container>
   ) : (
     <Container>
@@ -40,10 +50,24 @@ const Container = styled.div`
     background: rgba(50, 50, 50, 0.6);
     outline: 1px solid white;
   }
+  @media screen and (max-width: ${BREAKPOINT}px) {
+    font-size: 18px;
+    height: 60px;
+    padding-inline: 12px;
+  }
+`;
+
+const WrapIcon = styled(Hidden)`
+  display: 'flex';
+  align-items: 'center';
 `;
 
 const Icon = styled(Image)`
   object-fit: contain;
+  height: 50px;
+  @media screen and (max-width: ${BREAKPOINT}px) {
+    height: 30px;
+  }
 `;
 
 const Logo = styled(Image)`
@@ -62,4 +86,10 @@ const Initials = styled.div`
   min-height: 60px;
   border-radius: 50%;
   background: ${({ name }) => generateSolidBackground(name)};
+  @media screen and (max-width: ${BREAKPOINT}px) {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+  }
 `;
