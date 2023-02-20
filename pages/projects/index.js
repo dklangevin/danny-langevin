@@ -2,26 +2,34 @@ import Hidden from 'components/Hidden';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { projects } from '../../constants';
 
 export default function Projects() {
   const [preview, setPreview] = useState();
+  const [currentProject, setCurrentProject] = useState(0);
   return (
     <Container>
-      <List>
-        {projects.map(({ name, slug, preview }) => (
-          <Item
-            key={name}
-            href={`/projects/${slug}`}
-            onMouseEnter={() => setPreview(preview)}
-            onMouseLeave={() => setPreview()}
-          >
-            {name}
-          </Item>
-        ))}
-      </List>
-      <WrapPreview>
+      <WrapList>
+        <List>
+          {projects.map(({ name, slug, preview }, i) => (
+            <Item
+              key={name}
+              href={`/projects/${slug}`}
+              onMouseEnter={() => {
+                setPreview(preview);
+                setCurrentProject(slug);
+              }}
+              selected={currentProject === slug}
+            >
+              {name}
+            </Item>
+          ))}
+        </List>
+        <LearnMore>Click on a project to learn more!</LearnMore>
+      </WrapList>
+
+      <WrapPreview href={`/projects/${currentProject}`}>
         <Hidden fullWidth breakpoint={540}>
           {preview && <Preview src={preview} fill sizes="900px"></Preview>}
         </Hidden>
@@ -38,7 +46,7 @@ const Container = styled.div`
   position: relative;
 `;
 
-const WrapPreview = styled.div`
+const WrapPreview = styled(Link)`
   width: 100%;
   max-width: 900px;
   min-width: 600px;
@@ -118,6 +126,13 @@ const Name = styled(Link)`
   } */
 `;
 
+const WrapList = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 64px;
+`;
+
 const List = styled.ul`
   display: flex;
   flex-direction: column;
@@ -143,7 +158,26 @@ const Item = styled(Link)`
   transform-origin: 0% 0%;
   transform: rotateY(20deg);
   white-space: nowrap;
-  :not(:hover) {
+  display: flex;
+  flex-direction: column;
+
+  ${({ selected }) =>
+    selected
+      ? css`
+          transform: rotateY(5deg);
+          color: var(--celeste);
+        `
+      : css`
+          @supports (
+            (text-stroke: 1px white) or (-webkit-text-stroke: 1px white)
+          ) {
+            color: transparent;
+            -webkit-text-stroke: 1px white;
+            text-stroke: 1px white;
+            text-shadow: none;
+          }
+        `}
+  /* :not(:hover) {
     @supports ((text-stroke: 1px white) or (-webkit-text-stroke: 1px white)) {
       color: transparent;
       -webkit-text-stroke: 1px white;
@@ -154,8 +188,16 @@ const Item = styled(Link)`
   :hover {
     transform: rotateY(5deg);
     color: var(--celeste);
-  }
+  } */
   @media screen and (max-width: 540px) {
     white-space: unset;
   }
+`;
+
+const LearnMore = styled.span`
+  font-size: 18px;
+  line-height: 22px;
+  font-family: 'Right Gothic Wide';
+  color: white;
+  padding-left: 32px;
 `;
