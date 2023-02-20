@@ -35,7 +35,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media screen and (width < 780px) {
+  @media screen and (max-width: 780px) {
     padding: 16px;
   }
 `;

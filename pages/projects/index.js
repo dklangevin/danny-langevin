@@ -7,7 +7,7 @@ import { projects } from '../../constants';
 
 export default function Projects() {
   const [preview, setPreview] = useState();
-  const [currentProject, setCurrentProject] = useState(0);
+  const [currentProject, setCurrentProject] = useState();
   return (
     <Container>
       <WrapList>
