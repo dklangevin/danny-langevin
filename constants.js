@@ -198,7 +198,7 @@ export const projects = [
     name: 'trackr',
     preview: trackrPreview,
     slug: 'trackr',
-    link: 'https://player-grid.vercel.app/',
+    link: 'https://langevin-trackr.netlify.app/',
     github: 'https://github.com/dklangevin/player-grid',
     shortDescription: 'Issue Tracking App',
     description:
