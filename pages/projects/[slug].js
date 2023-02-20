@@ -216,18 +216,10 @@ const TextLink = styled.a`
 `;
 
 const Technologies = styled.div`
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 16px;
-  @media screen and (max-width: 1100px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  @media screen and (max-width: 780px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media screen and (max-width: 530px) {
-    grid-template-columns: 1fr;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 16px;
 `;
 
 const OtherTechnologies = styled.ul`

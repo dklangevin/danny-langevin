@@ -46,10 +46,6 @@ const Container = styled.div`
   font-size: 24px;
   font-weight: 500;
   text-align: center;
-  :hover {
-    background: rgba(50, 50, 50, 0.6);
-    outline: 1px solid white;
-  }
   @media screen and (max-width: ${BREAKPOINT}px) {
     font-size: 18px;
     height: 60px;
